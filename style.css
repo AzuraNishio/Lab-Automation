@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+#card {
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+
+    border-radius: 12px;
+    background: #222;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+}
