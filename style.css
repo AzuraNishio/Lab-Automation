@@ -3,6 +3,9 @@ body {
     background: #111;
     color: white;
     text-align: center;
+
+    margin: 0px auto;
+    height: 100%;
 }
 
 #card {
@@ -28,15 +31,89 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: green;
-    padding: 1px 20px;
+    padding: 0px 10px;
+    height: 80px;
+    width: 100%;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkgreen;
+    padding: 0px 30px;
+    width: 60%;
+    height: 90vh;
+    margin: 5vh auto;
+    border-radius: 10px;
+}
+
+.headerTitle {
+    font-size: xx-large;
+    padding: 0px 20px;
 }
 
 .col {
     display: flex;
     flex-direction: column;
     padding: 20px 0;
+    background-color: transparent;
+    width: 100%;
 }
 button {
     font-size: 18px;
     padding: 10px 20px;
+}
+
+.loginButton {
+    font-size: 18px;
+    padding: 1px 20px;
+    background-color: transparent;
+    color: white;
+    border-width: 0px;
+
+    transition: color 0.6s ease; 
+}
+
+.loginButton:hover {
+  color: greenyellow;
+}
+
+.login_confirm_button{
+    margin-bottom: 40px;
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 1px 20px;
+    background-color: green;
+    color: white;
+    border-width: 0px;
+    width: 50%;
+    align-self: center;
+
+    transition: color 0.6s ease; 
+}
+
+.login_confirm_button:hover{
+    background-color: goldenrod
+}
+
+.inputLabelText {
+    font-size: larger;
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 20px;
+    align-self: center;
+    width: 80%;
+    padding-left: 5px;
+    font-size: 16px;
+    border-color: yellowgreen;
+    border-width: 2px;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: transparent;
+    color: white;
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<script type="module" src="login.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Lab Automation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "panel">
+        <div class = "col">
+            <form class = "col" id="loginForm">
+                <h1>Entrar / Criar conta</h1>
+                <label class = "inputLabelText" for="username">Email:</label>
+                <input type="text" id="username" name="username" placeholder="Emai" required>
+
+                <label class = "inputLabelText" for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Senha" required>
+                <button type = "submit" class = "login_confirm_button">Entrar</button>
+            </form>    
+            <p>------------ Ou ------------</p>
+            <button id="googleLoginButton" class="login_confirm_button">
+                Entrar com Google
+            </button>
+        </div>
+    </div>
+</body>
+</html>
