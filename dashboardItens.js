@@ -1,21 +1,18 @@
-import { auth } from "./firebase.js";
-import {
-    onAuthStateChanged,
-    signOut
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-
-
-const items = [
-    "Reactor Control",
-    "Temperature Sensor",
-    "Pressure Valve",
-    "Emergency Shutdown"
-];
+import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { db } from "./firebase.js";
 
 const container = document.getElementById("container");
 
-items.forEach(item => {
-    const h1 = document.createElement("h1");
-    h1.textContent = item;
-    container.appendChild(h1);
+onSnapshot(collection(db, "devices"), (snapshot) => {
+
+    container.innerHTML = ""; // clear old UI
+
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        const h1 = document.createElement("h1");
+        h1.textContent = data.name;
+
+        container.appendChild(h1);
+    });
 });
