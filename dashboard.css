@@ -41,3 +41,17 @@
 .hidden {
     display: none;
 }
+.deviceList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vh;
+    align-items: center;
+}
+.deviceDiv {
+    background-color: darkgreen;
+    width: 90vh;
+    margin: 0px, 5vh;
+    align-self: center;
+}

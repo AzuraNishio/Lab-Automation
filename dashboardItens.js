@@ -1,7 +1,15 @@
-import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import {
+    collection,
+    getDocs,
+    onSnapshot
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 import { db } from "./firebase.js";
 
 const container = document.getElementById("container");
+const querySnapshot = await getDocs(collection(db, "devices"));
+
+
 
 onSnapshot(collection(db, "devices"), (snapshot) => {
 
@@ -10,9 +18,10 @@ onSnapshot(collection(db, "devices"), (snapshot) => {
     snapshot.forEach((doc) => {
         const data = doc.data();
 
-        const h1 = document.createElement("h1");
-        h1.textContent = data.name;
+        const deviceDiv = document.createElement("div");
+        deviceDiv.className = "deviceDiv";
+        deviceDiv.textContent = doc.id;
 
-        container.appendChild(h1);
+        container.appendChild(deviceDiv);
     });
 });
