@@ -1,20 +1,39 @@
+
+<script type="module" src="checkIfNotLoggedIn.js"></script>
+<script type="module" src="userMenu.js"></script>
+<script type="module" src="dashboardItens.js"></script>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Lab Automation</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+
 </head>
 <body>
     <div class = "mainCol">
         <div class = "header">
             <h1 class = "headerTitle"> Lab Automation  ⋆˚☆˖ ｡° ✮˖ ˚ ⋆｡° ✮˖ ⋆.˚ ˚☆</h1>
             <div class = "row">
+                <div class="userMenu">
+                    <img id="userAvatar" class="avatar" src="" alt="User">
 
+                    <div id="dropdown" class="dropdown hidden">
+                        <div id="userEmail" class="dropdownItem"></div>
+                        <hr>
+                        <button id="logoutBtn" class="dropdownItem">Logout</button>
+                    </div>
+                    
+                </div>
             </div>
         </div>
         <div>
             <p> Bem vinde! </p>
+
+            <div id="container"></div>
         </div>    
     </div>
 </body>
