@@ -8,7 +8,7 @@
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    margin: 10vh 5vh
+    margin: 0vh 5vh
 }
 
 .dropdown {
@@ -44,14 +44,29 @@
 .deviceList{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     width: 100vh;
-    align-items: center;
+    height: 70vh;
 }
 .deviceDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     background-color: darkgreen;
     width: 90vh;
-    margin: 0px, 5vh;
+    height: 5vh;
+    margin-top: 10px;
     align-self: center;
+    padding: 5px 20px;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
 }

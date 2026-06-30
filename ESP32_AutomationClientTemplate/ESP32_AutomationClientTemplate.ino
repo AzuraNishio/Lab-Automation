@@ -37,45 +37,53 @@ void tick(JsonDocument doc)
     Serial.print("Relay pin: ");
     Serial.println(relayPin);
 
-    Serial.print("Elapsed Hours: ");
-    Serial.println(elapsedHours);
+    bool running =  doc["fields"]["runningExperiment"]["booleanValue"];
+    if (running){
+        Serial.print("Elapsed Hours: ");
+        Serial.println(elapsedHours);
 
-    Serial.println("------------ [   Schedule  ] ------------");
-
-    // Calculate current state
-    JsonArray toggles =
-        doc["fields"]["toggles"]
-           ["arrayValue"]
-           ["values"];
-
-    bool enabled = false;
-    bool alternate = false;
-    for (JsonObject value : toggles)
-    {
-        double toggle = value["doubleValue"].as<double>();
-        alternate = !alternate;
-
-        Serial.print(toggle);
-        if (alternate){
-          Serial.print("h: Turn relay ON ");
-        } else {
-          Serial.print("h: Turn relay OFF");
-        }    
-        if (toggle < elapsedHours) {
-          enabled = !enabled;
-          Serial.println(" [X]");
-        } else {
-          Serial.println(" [ ]");
-        }
+        Serial.println("------------ [   Schedule  ] ------------");
 
         
-    }
 
-    if (enabled){
-        Serial.println("Currently ON");
-        turnPowerOn();
-    } else{
-        Serial.println("Currently OFF");
+        // Calculate current state
+        JsonArray toggles =
+            doc["fields"]["toggles"]
+            ["arrayValue"]
+            ["values"];
+
+        bool enabled = false;
+        bool alternate = false;
+        for (JsonObject value : toggles)
+        {
+            double toggle = value["doubleValue"].as<double>();
+            alternate = !alternate;
+
+            Serial.print(toggle);
+            if (alternate){
+            Serial.print("h: Turn relay ON ");
+            } else {
+            Serial.print("h: Turn relay OFF");
+            }    
+            if (toggle < elapsedHours) {
+            enabled = !enabled;
+            Serial.println(" [X]");
+            } else {
+            Serial.println(" [ ]");
+            }
+
+            
+        }
+
+        if (enabled){
+            Serial.println("Currently ON");
+            turnPowerOn();
+        } else{
+            Serial.println("Currently OFF");
+            turnPowerOff();
+        }
+    } else {
+        Serial.println("Currently disabled.");
         turnPowerOff();
     }
 }
