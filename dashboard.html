@@ -1,7 +1,8 @@
 
-<script type="module" src="checkIfNotLoggedIn.js"></script>
-<script type="module" src="userMenu.js"></script>
-<script type="module" src="dashboardItens.js"></script>
+<script type="module" src="checkIfNotLoggedIn.js" defer></script>
+<script type="module" src="userMenu.js" defer></script>
+<script type="module" src="dashboardItens.js" defer></script>
+<script type="module" src="dashboardMain.js" defer></script>
 
 
 <!DOCTYPE html>
@@ -15,6 +16,23 @@
 </head>
 <body>
     <div class = "mainCol">
+
+        <!--This here is the device creation modal, hidden by default-->
+        <div id="addDeviceModal" class="modal hidden">
+            <div class="modalContent">
+                <h2>Novo dispositivo</h2>
+
+                <input id="deviceName" placeholder="Device name">
+                <select id="deviceType">
+                    <option value="photoPeriod">Foto Período</option>
+                </select>
+                <div class="row">
+                    <button id="createDevice">Criar</button>
+                    <button id="cancelDevice">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        
         <div class = "header">
             <h1 class = "headerTitle"> Lab Automation  ⋆˚☆˖ ｡° ✮˖ ˚ ⋆｡° ✮˖ ⋆.˚ ˚☆</h1>
             <div class = "row">
@@ -30,7 +48,12 @@
                 </div>
             </div>
         </div>
+        <!-- This container here is populated by the javascript -->
         <div id="container" class="deviceList"></div>
+        
+        <button id = "addDeviceButton" class = "addDeviceButton">+</button>
     </div>
+
+    
 </body>
 </html>

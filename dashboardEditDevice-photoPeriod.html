@@ -1,0 +1,97 @@
+
+<script type="module" src="checkIfNotLoggedIn.js"></script>
+<script type="module" src="userMenu.js"></script>
+<script type="module" src="deviceEditPagePhotoPeriod.js"></script>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Automation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+    
+    <!--This here is the toggle creation modal, hidden by default-->
+        <div id="addToggleModal" class="modal hidden">
+            <div class="modalContent">
+                <h2>Adicionar período</h2>
+                
+                <h3> Quando:</h3>
+                <div class = "row" style = "justify-content: space-between;">
+                    <label class = "inputLabelText" for="day">Dia: </label>
+                    <input id="dayStart" placeholder="1" type = "number" style="width: 70%;">
+                </div>
+                <div class = "row" style = "justify-content: space-between;">
+                    <label class = "inputLabelText" for="day">Hora: </label>
+                    <input id="hourStart" placeholder="0" type = "number" style="width: 70%;">
+                </div>
+                <div class = "row" style = "justify-content: space-between;">
+                    <label class = "inputLabelText" for="day">Minuto: </label>
+                    <input id="minuteStart" placeholder="0" type = "number" style="width: 70%;">
+                </div>
+                <div class = "row" style = "justify-content: space-between;">
+                    <label class = "inputLabelText" for="repeat">Repetir: </label>
+                    <input id="repeat" placeholder="1" type = "number" style="width: 70%;">
+                </div>
+                <h3> Duração:</h3>
+                <div class = "row" style = "justify-content: space-between;">
+                    <label class = "inputLabelText" for="repeat">Horas: </label>
+                    <input id="hours" placeholder="8" type = "number" style="width: 70%;">
+                </div>
+                <div class = "row" style = "justify-content: space-between;">
+                    <label class = "inputLabelText" for="repeat">Minutos: </label>
+                    <input id="mins" placeholder="0" type = "number" style="width: 70%;">
+                </div>
+
+
+                <div class="row">
+                    <button id="createToggle">Criar</button>
+                    <button id="cancelToggle">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    <div class = "mainCol">
+        <div class = "header">
+            <h1 class = "headerTitle"> Lab Automation  ⋆˚☆˖ ｡° ✮˖ ˚ ⋆｡° ✮˖ ⋆.˚ ˚☆</h1>
+            <div class = "row">
+                <div class="userMenu">
+                    <img id="userAvatar" class="avatar" src="" alt="User">
+
+                    <div id="dropdown" class="dropdown hidden">
+                        <div id="userEmail" class="dropdownItem"></div>
+                        <hr>
+                        <button id="logoutBtn" class="dropdownItem">Logout</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class = "panel">
+            <div class = "row1">
+                <a href="dashboard.html" class="loginButton" style="font-size: 18; font-weight: bold;">Voltar</a>
+                <h1 id = "deviceName"> </h1>
+            </div>
+            <div class = "col">
+                <p style = "font-size: 24;"><b>Tipo:</b> Fotoperíodo</p>
+                <p style = "font-size: 24;">
+                    <b>Estado:</b>
+                    <span id="state"> ...</span>
+                    <button id = "toggle">iniciar</button>
+                </p>
+
+                <p style = "font-size: 24;">
+                    <b>Data de início:</b>
+                    <span id="date"> ...</span>
+                </p>
+                <div id = "rotina", class = "stepList"> </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

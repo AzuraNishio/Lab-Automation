@@ -25,7 +25,6 @@ onSnapshot(collection(db, "devices"), (snapshot) => {
         const title = document.createElement("h2");
         title.textContent = doc.id;
 
-        data.startDate
         const diff  = nowSeconds - data.experimentStartDate;
         const days  = Math.floor(diff / (60 * 60 * 24));
         const hours = Math.floor(diff / (60 * 60)) % 24;
@@ -43,7 +42,7 @@ onSnapshot(collection(db, "devices"), (snapshot) => {
 
         button.addEventListener("click", () => {
             console.log("Clicked device:", doc.id);
-            window.location.href = `dashboardEditDevice.html?id=${encodeURIComponent(doc.id)}`;
+            window.location.href = `dashboardEditDevice-${data.experimentType}.html?id=${encodeURIComponent(doc.id)}`;
         });
 
         deviceDiv.appendChild(title);

@@ -70,7 +70,10 @@ body {
 .col {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    justify-content:start;
+    align-items: start;
+    height: 100%;
+    padding: 0px 20px;
     background-color: transparent;
     width: 100%;
 }
